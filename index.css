@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+}
+
+.container{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.container .icon{
+    position: relative;
+    right: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .icon .imgBx{
+    position:  absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: 0.5s;
+    border: 1px solid #fff;
+    transform: rotate(calc(360deg/8 * var(--i)));
+    box-shadow: 0 0 0 4px #222, 0 0 0 6px #fff;
+    transform-origin: 340px;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.container .icon .imgBx.active{
+    box-shadow: 0 0 0 4px #222, 0 0 0 12px #ff1d50;
+}
+
+.container .icon .imgBx img{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(calc(-360deg/8 * var(--i)));
+    transition: 0.5s;
+    filter: grayscale(1);
+}
+
+.container .icon .imgBx.active img{
+    filter: grayscale(0);
+}
